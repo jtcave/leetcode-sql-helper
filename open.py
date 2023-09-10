@@ -49,13 +49,13 @@ def store_tables(table_blocks, db_conn):
         print()
 
 def main():
-    #print("First, we need a filename for the problem.")
-    #filename = input("Filename: ")
-    filename = "spam.sqlite3"
+    filename = input("Filename: ")
+    
     print("Paste the test case:")
     test_case = read_json_stdin()
     test_data = rotate_tables(test_case)
 
+    print()
     db_conn = sqlite3.connect(filename)
     store_tables(test_data, db_conn)
     db_conn.close()
